@@ -1,0 +1,103 @@
+/* .vertical-tabs {
+    display: flex;
+  }
+  
+  .tab-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .tab {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #ccc;
+  }
+  
+  */
+  .resp-vtabs ul.resp-tabs-list {
+    float: left;
+    width: 30%;
+}
+ul.resp-tabs-list {
+  margin: 0px;
+  padding: 0px;
+}
+.resp-tab-item.resp-tab-active {
+  position: relative;
+  z-index: 1;
+  color: rgb(255, 255, 255) !important;
+  margin-right: -1px !important;
+  /* border-width: 1px 1px 1px; */
+  /* border-style: solid none solid solid; */
+  /* border-color: rgb(45, 174, 216) rgb(45, 174, 216) rgb(45, 174, 216); */
+  /* border-image: initial; */
+  /* border-right: none; */
+  background: rgb(45, 174, 216);
+  /* border-radius: 5px 0px 0px 5px; */
+  /* padding: 14px 15px 15px 14px !important; */
+}
+.resp-vtabs .resp-tabs-list li.resp-tab-active::after {
+  position: absolute;
+  right: -20px;
+  top: 7px;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  background: rgb(45, 174, 216);
+}
+
+.resp-vtabs .resp-tabs-list li {
+  display: block;
+  cursor: pointer;
+  float: none;
+  color: rgb(17, 17, 17);
+  margin: 0px;
+  border-width: 1px 1px;
+  border-style: none none solid solid;
+  border-color: rgb(45, 174, 216) rgb(45, 174, 216);
+  border-image: initial;
+  border-top: none;
+  border-right: none;
+  border-radius: 5px 0px 0px 5px;
+  padding: 15px !important;
+}
+
+
+.resp-vtabs .resp-tabs-container {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 68%;
+    min-height: 250px;
+    clear: none;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(45, 174, 216);
+    border-image: initial;
+    border-radius: 5px;
+}
+.resp-vtabs .resp-tabs-container {
+  min-height: 1000px;
+}
+
+.resp-vtabs .resp-tabs-container {
+  border-radius: 0px 5px 5px;
+}
+.resp-tabs-list li:first-child {
+  border-top: 1px solid rgb(45, 174, 216);
+}
+.vertical-tabs{
+  margin-bottom: 100px;
+}
+.icon{
+  color: #2daed8;
+  padding-right: 6px;
+}

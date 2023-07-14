@@ -1,0 +1,9 @@
+.carousel .thumbs-wrapper {
+    display: none;
+}
+.carousel .carousel-status{
+    display: none;
+}
+.carousel .control-dots {
+    display: none;
+}

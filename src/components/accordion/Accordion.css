@@ -1,0 +1,21 @@
+.accordian-title-head{
+    background: #fff ;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #c1c1c1;
+}
+.accordian-title-head-active{
+    background: #2daed8 ;
+    padding: 10px 25px;
+    border-radius: 5px;
+  
+}
+
+.accordian-title-head span{
+    float: right;
+}
+.accordion-content{
+    border:1px solid #c1c1c1 ;
+    margin-bottom: 10px;
+}

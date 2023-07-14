@@ -1,0 +1,8 @@
+.logo-set{
+display: flex;
+flex-direction: row;
+}
+
+.carousel .slider-wrapper {
+    padding-top: 0px ;
+}
