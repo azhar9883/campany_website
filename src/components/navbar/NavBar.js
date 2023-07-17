@@ -9,7 +9,6 @@ import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-
 // import {Link} from "react-router-dom";
 
 function NavBar() {
@@ -17,11 +16,13 @@ function NavBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [activePage, setActivePage] = useState("hero");
   const [isHovered, setIsHovered] = useState(false);
+
   const handleClick = () => {
     setIsVisible(!isVisible);
   };
 
   const handleMouseEnter = () => {
+
     setIsHovered(true);
   };
   const handleMouseLeave = () => {
@@ -134,12 +135,12 @@ function NavBar() {
                     Technology We Use
                   </Link>
                 </li>
-                <li
-                className="dropdown open"
+               <li
+                className={activePage === "tech" ? "active" : ""}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  Products
+                 <Link> Products <span class="caret"></span></Link>
                  { isHovered &&  (<ul className="dropdown-menu">
                     <li>
                       <a href="#">School Management System</a>
@@ -151,7 +152,10 @@ function NavBar() {
                       <a href="#">Hospital Management System</a>
                     </li>
                   </ul>)}
-                </li>
+                </li> 
+                 
+
+             
                 <li>
                   <NavLink
                     to="/contact"
