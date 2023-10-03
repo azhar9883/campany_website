@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+###  change in home folder
+  
+  Image lazy loader used to run fast npm i react-lazy-load-image-component
+
+### validation in form contact form file
+
+ change in contact_us form
+
+ ### validation in career form career form file
+  change in career form

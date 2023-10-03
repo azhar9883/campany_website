@@ -1,0 +1,14 @@
+.option-button {
+    border-radius: 15px;
+    color: #a21a24;
+    border: 1px solid #a21a24;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 0 5px 5px 0;
+}
+
+.option-button:hover {
+    background: #a21a24;
+    color: #fff;
+    transition:all 0.5s ease-in-out 0s; -webkit-transition:all 0.5s ease-in-out 0s;
+}

@@ -7,3 +7,47 @@
 .carousel .control-dots {
     display: none;
 }
+.chartBot{
+    position: fixed;
+    width: 275px;
+    bottom: 50px;
+    right:113px;
+    z-index: 999;
+}
+.close-btn{
+   
+    width: 37px;
+    height: 37px;
+    /* display: block; */
+    position: absolute;
+    right: -76px;
+    top: -12px;
+    z-index: 9999;
+    color: #eb962e;
+}
+
+
+.ai-agent {
+    animation: shake-animation 5s ease infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes shake-animation {
+    0% { transform:translate(0,0) }
+    1.78571% { transform:translate(15px,0) }
+    3.57143% { transform:translate(0,0) }
+    5.35714% { transform:translate(15px,0) }
+    7.14286% { transform:translate(0,0) }
+    8.92857% { transform:translate(15px,0) }
+    10.71429% { transform:translate(0,0) }
+    100% { transform:translate(0,0) }
+}
+@-webkit-keyframes shake-animation {
+    0% { transform:translate(0,0) }
+    1.78571% { transform:translate(15px,0) }
+    3.57143% { transform:translate(0,0) }
+    5.35714% { transform:translate(15px,0) }
+    7.14286% { transform:translate(0,0) }
+    8.92857% { transform:translate(15px,0) }
+    10.71429% { transform:translate(0,0) }
+    100% { transform:translate(0,0) }
+}

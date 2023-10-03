@@ -4,11 +4,16 @@ import { FiCheckSquare } from "react-icons/fi";
 import {BiSolidDownArrow, BiSolidUpArrow} from "react-icons/bi";
 import "./Accordion.css";
 import { color } from "framer-motion";
-
-function Accordion({ title, content }) {
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+function Accordion({sendDataToAco}) {
   const [isActive, setIsActive] = useState(null);
   const toggleAccordion = (index) => {
     setIsActive((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const sendData = (data) => {
+    // const data = 'Hello from Child';
+    sendDataToAco(data);
   };
   return (
     <>
@@ -71,10 +76,14 @@ function Accordion({ title, content }) {
                     </p>
                   </div>
                 </div>
+                <a href="#sec2" class="button2" onClick={() => sendData(item.label)}>Apply Now <span><ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} /></span></a>
               </div>
+              
             )}
           </div>
+
         ))}
+
       </div>
     </>
   );

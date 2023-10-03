@@ -1,21 +1,28 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useState } from "react";
+import React from "react"; import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-
+import { NavLink} from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+import {FaUniversity, FaRegCalendarCheck, FaRegHospital} from 'react-icons/fa'
 // import {Link} from "react-router-dom";
 
 function NavBar() {
+  let location = useLocation();
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
-  const [activePage, setActivePage] = useState("hero");
+  const [activePage, setActivePage] = useState("");
+  const [active, setActive] = useState("")
   const [isHovered, setIsHovered] = useState(false);
+
+
+useEffect(() => {
+const path = location.pathname.substring(1);
+
+console.log(path);
+setActive(path)
+},[active]);
+
+
 
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -28,31 +35,49 @@ function NavBar() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
-  const scrollToSection = (sectionId, offset) => {
-    const section = document.getElementById(sectionId);
-    setActivePage(sectionId);
-    if (section) {
-      const topOffset = section.offsetTop - offset;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
+  const checkHoverStatus = () =>{
+    if(!isHovered){
+      setIsHovered(true);
+    }else{
+      setIsHovered(false);
     }
-  };
+    
+  }
+
+  // const scrollToSection = (sectionId, offset) => {
+  //   const section = document.getElementById(sectionId);
+  //   setActivePage(sectionId);
+  //   if (section) {
+  //     const topOffset = section.offsetTop - offset;
+  //     window.scrollTo({ top: topOffset, behavior: "smooth" });
+  //   }
+  // };
 
   const handleLinkClick = (sectionId) => {
+  
+    
+    setActivePage(sectionId);
     navigate("/");
-    setActivePage(sectionId);
   };
-
+  
   const handleCareerLink = (sectionId) => {
-    navigate(`/${sectionId}`);
-    setActivePage(sectionId);
+    // console.log(activePage)
+  
+
+    // navigate(`/${sectionId}`);
+
     window.scrollTo({
       top: 0,
       behavior: "auto",
       /* you can also use 'auto' behaviour
 		   in place of 'smooth' */
     });
+
   };
+  
+
+
+
   return (
     <>
       <nav className="navbar navbar-default">
@@ -73,7 +98,11 @@ function NavBar() {
               <span className="icon-bar"></span>
             </button>
             <Link
-              to="hero"
+              to="main"
+              spy={true}
+              // smooth={true}
+              offset={-150}
+              duration={700}
               className="navbar-brand logo"
               onClick={() => handleLinkClick("hero")}
             >
@@ -91,7 +120,7 @@ function NavBar() {
           >
             <nav>
               <ul className="nav navbar-nav">
-                <li className={activePage === "hero" ? "active" : ""}>
+                <li className={activePage === "home" ? "active" : ""}>
                   {" "}
                   <Link
                     activeClass="active"
@@ -100,14 +129,14 @@ function NavBar() {
                     smooth={true}
                     offset={-150}
                     duration={700}
-                    onClick={() => handleLinkClick("hero")}
+                    onClick={() => handleLinkClick("home")}
                   >
-                    About
+                    Who we are
                   </Link>
                 </li>
 
                 <li className={activePage === "service" ? "active" : ""}>
-                  {" "}
+           
                   <Link
                     activeClass="active"
                     to="service"
@@ -117,12 +146,12 @@ function NavBar() {
                     duration={700}
                     onClick={() => handleLinkClick("service")}
                   >
-                    Service
+                    Services
                   </Link>
                 </li>
 
                 <li className={activePage === "tech" ? "active" : ""}>
-                  {" "}
+             
                   <Link
                     activeClass="active"
                     to="tech"
@@ -136,21 +165,26 @@ function NavBar() {
                   </Link>
                 </li>
                <li
-                className={activePage === "tech" ? "active" : ""}
+       
+                className={isHovered  ? " dropdown open" : " dropdown"}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
+                onClick={checkHoverStatus}
                 >
-                 <Link> Products <span class="caret"></span></Link>
-                 { isHovered &&  (<ul className="dropdown-menu">
+                 <a > Products <span className="caret"></span></a>
+                 { isHovered &&  (<ul className="dropdown-menu ">
                     <li>
-                      <a href="#">School Management System</a>
+                      <a target="_blank" rel="noreferrer" href="https://schoolnewgen.com/"><FaUniversity/> School Management System</a>
                     </li>
                     <li>
-                      <a href="#">Event Management Systems</a>
+                      
+                      <a ><FaRegCalendarCheck/> Event Management Systems</a>
                     </li>
                     <li>
-                      <a href="#">Hospital Management System</a>
+                     
+                      <a ><FaRegHospital/> Hospital Management System</a>
                     </li>
+                    <li><NavLink to="/contact" state={"getAdemo"} className="button1">Get A Demo</NavLink></li>
                   </ul>)}
                 </li> 
                  
@@ -158,8 +192,9 @@ function NavBar() {
              
                 <li>
                   <NavLink
-                    to="/contact"
-                    className={activePage === "career" ? "active" : ""}
+                  to="/contact"
+                  state={"contact"}
+                    className={active === "contact" ? "active" : ""}
                     onClick={() => handleCareerLink("contact")}
                   >
                     Contact Us
@@ -169,7 +204,8 @@ function NavBar() {
                 <li>
                   <NavLink
                     to="/career"
-                    className={activePage === "career" ? "active" : ""}
+                  
+                    className={active === "career" ? "active" : ""}
                     onClick={() => handleCareerLink("career")}
                   >
                     Career

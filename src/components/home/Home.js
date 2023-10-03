@@ -1,6 +1,7 @@
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import React, { useRef, useEffect } from "react";
-// import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Home() {
   const elementRef = useRef(null);
@@ -8,19 +9,18 @@ function Home() {
   useEffect(() => {
     if (elementRef.current) {
       const offset = elementRef.current.getBoundingClientRect().top;
-      // elementRef.current.offsetTop = -100;
-      console.log(offset);
+
     }
   }, []);
 
   return (
     <>
-      <div class="block1 same-gap" ref={elementRef}>
-        <div class="container" id="sec1">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="heading-block same-gap">
-                <h2 class="heading">
+      <div className="block1 same-gap" ref={elementRef}>
+        <div className="container" id="sec1">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="heading-block same-gap">
+                <h2 className="heading">
                   <span>Welcome to </span> minivet system
                 </h2>
                 <p>
@@ -33,10 +33,10 @@ function Home() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="block1-inner">
-                <div class="img-holder">
+          <div className="row">
+            <div className="col-sm-4">
+              <div className="block1-inner">
+                <div className="img-holder">
                   <img src="assets/images/img1.jpg" alt="no img" />
                 </div>
                 <h3>We are professional</h3>
@@ -50,18 +50,18 @@ function Home() {
                   solutions.
                 </p>
                 <p>
-                  <a href="#" class="more">
+                  {/* <a href="#" className="more">
                     More{" "}
                     <span>
                       <ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} />
                     </span>
-                  </a>
+                  </a> */}
                 </p>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="block1-inner">
-                <div class="img-holder">
+            <div className="col-sm-4">
+              <div className="block1-inner">
+                <div className="img-holder">
                   <img src="assets/images/img2.jpg" alt="no img" />
                 </div>
                 <h3>We know the business</h3>
@@ -70,21 +70,21 @@ function Home() {
                   outstanding, devoted and round the clock support service. With
                   an aspiration to integrate our ingenious expertise to device
                   unique attributes, we desire to offer clients an identity in
-                  the target market.
+                  the target market. Our approach is focused to attain sustained visibility and success for our clients.
                 </p>
                 <p>
-                  <a href="#" class="more">
+                  {/* <a href="#" className="more">
                     More{" "}
                     <span>
                       <ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} />
                     </span>
-                  </a>
+                  </a> */}
                 </p>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="block1-inner">
-                <div class="img-holder">
+            <div className="col-sm-4">
+              <div className="block1-inner">
+                <div className="img-holder">
                   <img src="assets/images/img3.jpg" alt="no img" />
                 </div>
                 <h3>Quality comes first</h3>
@@ -97,12 +97,7 @@ function Home() {
                   for our global clientele.
                 </p>
                 <p>
-                  <a href="#" class="more">
-                    More{" "}
-                    <span>
-                      <ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} />
-                    </span>
-                  </a>
+
                 </p>
               </div>
             </div>
@@ -110,40 +105,88 @@ function Home() {
         </div>
       </div>
 
-      <div class="block2 same-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8">
-              <h2>Everyday is the best day in life</h2>
-              <span>
-                Minivet System was established with the idea to offer you
-                conceptual and functional development for the global business
-                community.
-              </span>
-            </div>
-            <div class="col-sm-4">
-              <div class="text-right">
-                <a href="#" class="button3">
-                  Full Story{" "}
-                  <span>
-                    <ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} />
-                  </span>
-                </a>
+      <div className="block-design">
+        <div className="container">
+          <div className="row">
+            <div className="block-design-inner clearfix">
+              <div className="col-sm-4">
+                <LazyLoadImage
+                key={1}
+                src={`assets/images/video.gif`}
+                alt={`Image Alt-{assets/images/video.gif}`}
+                className="img-lazy"
+                width={700} height={500}
+              />
+              </div>
+              <div className="col-sm-8">
+                <div className="border-left">
+                  <h2>A Showcase of Innovative Designs</h2>
+                  <p>Our design portfolio showcases a diverse collection of creative projects that highlight our expertise and passion for design. From graphic design and branding to web, app and product design, each piece in our portfolio reflects a unique blend of innovation and attention to detail. Through our work, we aim to communicate compelling stories, evoke emotions, and deliver exceptional user experiences.</p>
+                  <div className="design-icon">
+                    <div className="row">
+                      <div className="col-sm-6 col-md-3 col-xs-6">
+                        <div className="bg-white">
+                          <img src="assets/images/d1.png" alt="no img" />
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-3 col-xs-6">
+                        <div className="bg-white">
+                          <img src="assets/images/d2.png" alt="no img" />
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-3 col-xs-6">
+                        <div className="bg-white">
+                          <img src="assets/images/d3.png" alt="no img" />
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-3 col-xs-6">
+                        <div className="bg-white">
+                          <img src="assets/images/d4.png" alt="no img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a className="button2">our design portfolio <span><ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} /></span></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="block3">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="video-sec">
+
+      <div className="block2 same-gap">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <img src="assets/images/step-banner.png" alt="no img" />
+              <div className="text-center">
+                {/* <a href="development-process.html" className="button2">development process<span><i className="fa fa-long-arrow-right" aria-hidden="true"></i></span></a> */}
+                {/* <button type="submit" className="button2">
+                  development process
+                  <span>
+                    <ArrowRightAltIcon
+                      sx={{ mt: "5px", fontSize: 17 }}
+                    />
+                  </span>
+                </button> */}
+                <Link to="/developmentProcess" className="button2">development process <span><ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} /></span></Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="block3">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="video-sec">
                 <img src="assets/images/img5.jpg" alt="no img" />
               </div>
             </div>
-            <div class="col-sm-6">
+            <div className="col-sm-6">
               <h3>We make you best</h3>
               <h2>
                 We put most imporatnce for your growth and success to your
@@ -156,8 +199,8 @@ function Home() {
                 you can communicate with us through e-mail. Our efficient team
                 members will get back to you as soon as possible.
               </p>
-              <a href="#" class="button2">
-                Full Story{" "}
+              <a href="#" className="button2">
+                Full Story
                 <span>
                   <ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} />
                 </span>
@@ -167,10 +210,10 @@ function Home() {
         </div>
       </div>
 
-      <div class="block4 same-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8">
+      <div className="block4 same-gap">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-8">
               <h2>Minivet system is the best solution</h2>
               <p>
                 <img
@@ -198,8 +241,8 @@ function Home() {
                 website development for both desktop and mobile based devices.
               </p>
             </div>
-            <div class="col-sm-4">
-              <div class="pos1">
+            <div className="col-sm-4">
+              <div className="pos1">
                 <img src="assets/images/img4.png" alt="no img" />
               </div>
             </div>
@@ -207,10 +250,10 @@ function Home() {
         </div>
       </div>
 
-      <div class="block3">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
+      <div className="block3">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
               <h3>Stay tune with us</h3>
               <h2>We developed the effective way to success</h2>
               <p>
@@ -226,38 +269,15 @@ function Home() {
                 the leading names in the world of web design and development.
               </p>
             </div>
-            <div class="col-sm-6">
-              <div class="pos2">
+            <div className="col-sm-6">
+              <div className="pos2">
                 <img src="assets/images/img6.jpg" alt="no img" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="banner-block">
-        <img class="show" src="./assets/images/ai-banner2.jpg" alt="no img" />
-        <img class="hide" src="./assets/images/ai-banner3.jpg" alt="no img" />
-        <div class="banner-block-content">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h2>Artificial intelligence</h2>
-                <h3>
-                  Empowering Minds <span>Transforming the World with AI</span>
-                </h3>
-                <p>
-                  Send mail for more information{" "}
-                  <strong>
-                    {" "}
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>{" "}
-                    info@minivetsystem.com
-                  </strong>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </>
   );
 }

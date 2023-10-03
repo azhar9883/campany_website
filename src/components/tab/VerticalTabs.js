@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Tab from "./Tab";
-import "./Tab.css";
-import { FaCircleNotch } from "react-icons/fa";
+
 import { FiCheckSquare } from "react-icons/fi";
-import { AiFillHome } from "react-icons/ai";
 import data from "../../data"
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 function VerticalTabs({ sendDataToParent }) {
+
   const [activeTab, setActiveTab] = useState("Senior .Net developer");
-
-
+  
   const sendData = (data) => {
-    // const data = 'Hello from Child';
     sendDataToParent(data);
   };
 
@@ -19,9 +16,10 @@ function VerticalTabs({ sendDataToParent }) {
     console.log(label);
     setActiveTab(label);
   };
+
   const avtivedata = data.find((item) => item.label === activeTab);
 
-  console.log(avtivedata);
+
 
   return (
 
@@ -75,7 +73,7 @@ function VerticalTabs({ sendDataToParent }) {
             <strong>No. of Posts : {avtivedata.vacancy}</strong>
           </p>
          <div>
-         <a href="#sec2" class="button2" onClick={sendData(avtivedata.label)}>Apply Now <span><ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} /></span></a>
+         <a href="#sec2" class="button2" onClick={() => sendData(avtivedata.label)}>Apply Now <span><ArrowRightAltIcon sx={{ mt: "10px", fontSize: 17 }} /></span></a>
           </div> 
         
         </div>
